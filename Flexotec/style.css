@@ -73,7 +73,7 @@ nav ul li a {
 }
 
 .hero {
-    height: 80vh;
+    height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=1200') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
@@ -85,14 +85,7 @@ nav ul li a {
     padding-top: 60px;
 }
 
-.btn {
-    background: #05b41c;
-    color: #fff;
-    padding: 10px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-}
+
 
 
 
@@ -179,21 +172,7 @@ button:hover {
   height: 35px;
 }
 
-/* Configuração da Seção Hero */
-.hero {
-    height: 80vh; /* Ocupa 80% da altura da tela */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=1600&q=80'); 
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 0 20px;
-}
+
 
 /* Título Principal */
 .hero h1 {
@@ -213,11 +192,11 @@ button:hover {
     font-weight: 300;
 }
 
-/* Botão de Orçamento */
+/* Estilo base do botão (mantém igual) */
 .hero .btn {
     display: inline-block;
     padding: 15px 40px;
-    background-color: #25d366; /* Verde que você já está usando */
+    background-color: #25d366;
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -227,12 +206,17 @@ button:hover {
     border: 2px solid transparent;
 }
 
-.hero .btn:hover {
-    background-color: transparent;
-    border-color: #25d366;
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+/* Aplica o hover APENAS em dispositivos que usam mouse */
+@media (hover: hover) {
+    .hero .btn:hover {
+        background-color: transparent;
+        border-color: #25d366;
+        color: #25d366; /* Adicionei para o texto não sumir no fundo branco */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
 }
+
+
 
 /* Ajuste para Mobile */
 @media (max-width: 768px) {
@@ -240,3 +224,20 @@ button:hover {
         height: 60vh;
     }
 }
+
+/* Configuração da Seção Hero */
+.hero {
+    height: 80vh; /* Ocupa 80% da altura da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?auto=format&fit=crop&w=1600&q=80'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 0 20px;
+}
+
